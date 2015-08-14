@@ -9,7 +9,7 @@
 Summary:	%{cr_display_name} repository files for %{base_display_name}
 Name:		%{cr_name}-%{base_name}-repo
 Version:	%{cr_version}
-Release:	1
+Release:	2
 License:	AGPLv3
 Group:		System Environment/Base
 Source0:	%{cr_name}.repo
@@ -49,5 +49,8 @@ rm -rf $RPM_BUILD_ROOT
 %config(noreplace) /etc/yum.repos.d/*
 
 %changelog
+* Fri Aug 14 2015 John Siegrist <john@complects.com> - 2-2
+- Fixed GPG key verification for RPMs downloaded from the CloudRouter repository.
+
 * Mon Aug 10 2015 John Siegrist <jsiegrist@iix.net> - 2-1
 - Initial commit of the CentOS-specific CloudRouter after splitting the cloudrouter-repo project into separate ones for Fedora and CentOS.
