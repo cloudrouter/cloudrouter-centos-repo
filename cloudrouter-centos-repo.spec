@@ -38,6 +38,7 @@ install -pm 644 %{SOURCE0} $RPM_BUILD_ROOT%{_sysconfdir}/yum.repos.d
 
 # GPG Key
 install -Dpm 644 %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/pki/rpm-gpg
+ln -s $(basename %{SOURCE1}) $RPM_BUILD_ROOT%{_sysconfdir}/pki/rpm-gpg/RPM-GPG-KEY-cloudrouter-latest-primary
 
 %clean
 rm -rf $RPM_BUILD_ROOT
