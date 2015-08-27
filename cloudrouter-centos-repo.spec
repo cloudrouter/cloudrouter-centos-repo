@@ -9,13 +9,15 @@
 Summary:	%{cr_display_name} repository files for %{base_display_name}
 Name:		%{cr_name}-%{base_name}-repo
 Version:	%{cr_version}
-Release:	2
+Release:	3
 License:	AGPLv3
 Group:		System Environment/Base
 Source0:	%{cr_name}.repo
 Source1:	RPM-GPG-KEY-%{cr_name}-%{cr_version}-primary
 BuildArch:	noarch
+Provides:   cloudrouter-repo
 Conflicts:	%{cr_name}-%{base_name}-release
+Conflicts:  %{cr_name}-release-%{base_name}
 
 %description
 %{cr_display_name} repository files for %{base_display_name}.
@@ -49,6 +51,9 @@ rm -rf $RPM_BUILD_ROOT
 %config(noreplace) /etc/yum.repos.d/*
 
 %changelog
+* Thu Aug 27 2015 John Siegrist <john@complects.com> - 2-3
+- Added support for virtual package "cloudrouter-repo".
+
 * Fri Aug 14 2015 John Siegrist <john@complects.com> - 2-2
 - Fixed GPG key verification for RPMs downloaded from the CloudRouter repository.
 
