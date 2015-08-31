@@ -9,7 +9,7 @@
 Summary:	%{cr_display_name} repository files for %{base_display_name}
 Name:		%{cr_name}-%{base_name}-repo
 Version:	%{cr_version}
-Release:	3
+Release:	4
 License:	AGPLv3
 Group:		System Environment/Base
 Source0:	%{cr_name}.repo
@@ -18,6 +18,7 @@ BuildArch:	noarch
 Provides:   cloudrouter-repo
 Conflicts:	%{cr_name}-%{base_name}-release
 Conflicts:  %{cr_name}-release-%{base_name}
+Requires:	epel-release
 
 %description
 %{cr_display_name} repository files for %{base_display_name}.
@@ -51,6 +52,9 @@ rm -rf $RPM_BUILD_ROOT
 %config(noreplace) /etc/yum.repos.d/*
 
 %changelog
+* Tue Sep 01 2015 John Siegrist <john@complects.com> - 2-4
+- Added dependency on epel-release so the CloudRouter dependencies in EPEL7 are accessible.
+
 * Thu Aug 27 2015 John Siegrist <john@complects.com> - 2-3
 - Added support for virtual package "cloudrouter-repo".
 
