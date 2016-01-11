@@ -1,24 +1,24 @@
 %define cr_display_name CloudRouter
 %define cr_name cloudrouter
-%define cr_version 2
+%define cr_version 3
+%define cr_gpg_key RPM-GPG-KEY-CLOUDROUTER-PRIMARY
 
 %define base_display_name CentOS 7
 %define base_name centos
-%define base_version 7
+%define base_version 7.2
 
 Summary:	%{cr_display_name} repository files for %{base_display_name}
 Name:		%{cr_name}-%{base_name}-repo
 Version:	%{cr_version}
-Release:	4
+Release:	1
 License:	AGPLv3
 Group:		System Environment/Base
 Source0:	%{cr_name}.repo
-Source1:	RPM-GPG-KEY-%{cr_name}-%{cr_version}-primary
+Source1:	%{cr_gpg_key}
 BuildArch:	noarch
 Provides:   cloudrouter-repo
-Conflicts:	%{cr_name}-%{base_name}-release
 Conflicts:  %{cr_name}-release-%{base_name}
-Requires:	epel-release
+
 
 %description
 %{cr_display_name} repository files for %{base_display_name}.
@@ -41,7 +41,6 @@ install -pm 644 %{SOURCE0} $RPM_BUILD_ROOT%{_sysconfdir}/yum.repos.d
 
 # GPG Key
 install -Dpm 644 %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/pki/rpm-gpg
-ln -s $(basename %{SOURCE1}) $RPM_BUILD_ROOT%{_sysconfdir}/pki/rpm-gpg/RPM-GPG-KEY-cloudrouter-latest-primary
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -52,6 +51,9 @@ rm -rf $RPM_BUILD_ROOT
 %config(noreplace) /etc/yum.repos.d/*
 
 %changelog
+* Wed Dec 30 2015 John Siegrist <john@complects.com> - 3-1
+- Updated the version for CRv3.
+
 * Tue Sep 01 2015 John Siegrist <john@complects.com> - 2-4
 - Added dependency on epel-release so the CloudRouter dependencies in EPEL7 are accessible.
 
