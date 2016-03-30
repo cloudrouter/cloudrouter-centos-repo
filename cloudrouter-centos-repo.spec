@@ -5,12 +5,11 @@
 
 %define base_display_name CentOS 7
 %define base_name centos
-%define base_version 7.2
 
 Summary:	%{cr_display_name} repository files for %{base_display_name}
 Name:		%{cr_name}-%{base_name}-repo
 Version:	%{cr_version}
-Release:	1
+Release:	2
 License:	AGPLv3
 Group:		System Environment/Base
 Source0:	%{cr_name}.repo
@@ -51,6 +50,9 @@ rm -rf $RPM_BUILD_ROOT
 %config(noreplace) /etc/yum.repos.d/*
 
 %changelog
+* Wed Mar 30 2016 John Siegrist <john@complects.com> - 3-2
+- Updated the CRv3 Repo URL back to the old scheme.
+
 * Wed Dec 30 2015 John Siegrist <john@complects.com> - 3-1
 - Updated the version for CRv3.
 
