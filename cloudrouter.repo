@@ -1,6 +1,6 @@
 [cloudrouter]
 name=cloudrouter
-baseurl=https://repo.cloudrouter.org/repo/centos/7.2/$basearch/
+baseurl=https://repo.cloudrouter.org/repo/4/centos/7/$basearch/
 enabled=1
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CLOUDROUTER-PRIMARY
