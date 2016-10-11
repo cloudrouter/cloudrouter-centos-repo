@@ -1,2 +1,4 @@
-f755ad0a7bfc1dcbf2749ba4aafd2bf5  cloudrouter.repo
-be17d632968f8bd208c0e3df2dc5f056  RPM-GPG-KEY-cloudrouter-2-primary
+f4a1ad41b4e640bfbc7023bd8179f303  cloudrouter.repo
+be17d632968f8bd208c0e3df2dc5f056  RPM-GPG-KEY-CLOUDROUTER-PRIMARY
+73f1eb20517c55bf9493b7dd6e480788  GNU-AGPL-3.0.txt
+4e2aee3f50167a8482c5b569294ffe7a  LICENSE
